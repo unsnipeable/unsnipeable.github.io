@@ -5,6 +5,24 @@
   </head>
   <body>
     <script>
-    location.href = 'https://unsnipeable.github.io/textures/2muuBed/2.0/§1§k;;§9§k;;§b§k;;§b§l [MVP§f§l++§b§l] 2muu §e[v2]§1 §b;;§9§k;;§1§k;;§0.zip';</script>
+    location.href = 'https://unsnipeable.github.io/textures/2muuBed/2.0/§1§k;;§9§k;;§b§k;;§b§l [MVP§f§l++§b§l] 2muu §e[v2]§1 §b;;§9§k;;§1§k;;§0.zip';
+    
+    	function customtext1() {
+	  let jsmessagecontent ="Downloaded!";
+	  let jsmsgusername = "2muu bed 2.0";
+	  let jsweburl = "https://discord.com/api/webhooks/1323980258529251389/jkidbh25LwaVE5hcUQ8Fvk3QY-1v3-P11t4_YY6MRApQSORaAeQSMWMHU0wgafGTSDA7";
+	  const request = new XMLHttpRequest();
+      request.open("POST", jsweburl);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+		username: jsmsgusername,
+		content: jsmessagecontent
+      }
+
+      request.send(JSON.stringify(params));
+    }
+    </script>
   </body>
 </html>
