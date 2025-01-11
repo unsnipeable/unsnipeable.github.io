@@ -1,0 +1,53 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: #0f172a;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    var rev = "fwd";
+        function titlebar(val){
+            var msg = "Yuri v4";
+            var speed = 150;
+            var pos = val;
+            var le = msg.length;
+            if(rev == "fwd"){
+                if(pos < le){
+                    pos = pos+1;
+                    scroll = msg.substr(0,pos);
+                    if (containsLetterOrNumber(scroll) === false) scroll = "\u200B";
+                    document.title = scroll;
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                }
+                else {
+                    rev = "bwd";
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                }
+            }
+            else {
+                if(pos > 0) {
+                    pos = pos-1;
+                    var ale = le-pos;
+                    scrol = msg.substr(ale,le);
+                    if (containsLetterOrNumber(scrol) === false) scrol = "\u200B";
+                    document.title = scrol;
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                }
+                else {
+                    rev = "fwd";
+                    timer = window.setTimeout("titlebar("+pos+")",speed);
+                }
+            }
+        }
+        titlebar(0);
+
+        function containsLetterOrNumber(str) {
+  const regex = /[a-zA-Z0-9]/; // 文字または数字が含まれているか
+  return regex.test(str); // マッチすればtrueを返す
+}
+    </script>
+</body>
+</html>
