@@ -1,13 +1,285 @@
 <html>
 <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            background-color: #0f172a;
-        }
+
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+
+    overflow-x: hidden;
+    height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(15, 23, 42);
+}
+
+.blur-effect {
+
+  position: static;
+  width: 140%;
+  left: 50%;
+  height: 140%;
+  background: radial-gradient(circle, rgb(58, 55, 255), rgba(255, 255, 255, 0) 50%);
+  filter: blur(15px);
+  pointer-events: none;  
+  transition: top 0.1s ease-out;
+  z-index: 2;
+}
+
+.blur-effect2 {
+position: static;
+width: 140%;
+left: 50%;
+height: 140%;
+background: radial-gradient(circle,rgba(255, 255, 255, 0.884), rgba(255, 255, 255, 0) 50%);
+filter: blur(15px); 
+pointer-events: none; 
+transition: top 0.1s ease-out;
+z-index: 2;
+}
+
+.content {
+  height: 300px;
+  padding: 20px;
+}
+.kuuhaku {
+  height: 200px;
+  padding: 20px;
+}
+
+.text-overlay {
+  position:relative;
+  color: #e7e7e7;
+  top: -1200px;
+  font-size: 52px;
+  font-weight: bold;
+  filter: blur(0px);
+  transition: none;
+  background: none;
+  z-index:4;
+  
+  animation:text-overlay 1s linear;
+white-space:nowrap;
+overflow:hidden;
+}
+
+
+.box {
+    position:relative; 
+  margin       : auto;
+  top: -780px;
+  height       : 170px;
+  background   : linear-gradient(to bottom, #000000, #141414);
+
+}
+
+
+
+
+.boxx {
+    position:relative; 
+  top: -780px;
+  height       : 1000px;
+  background-color: #0f172a;
+}
+
+.unkos{
+    position:relative;
+    color:white;
+    top: 40%;
+    font-size: 30px;
+    
+  font-family: "Sour Gummy", serif;
+}
+
+.button {
+  position:relative;
+  top: -1160px;
+  font-weight: bold;
+  
+  animation:text-overlayz 1s linear;
+white-space:nowrap;
+overflow:hidden;
+
+  display: inline-block;
+  background: linear-gradient(to right, #000d55 0%, #3c009c 45%, #00bfff 100%);
+  background-size: 200% auto;  
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  transition: .5s;
+
+  z-index:10;
+}
+.button:hover {
+  color: #fff;
+  filter: blur(0px);
+  background-position: right center;
+}
+
+
+footer {
+  position: static;
+  bottom: 0px;
+  width: 100%;
+  height: 400px;
+  font-size:20px;
+  background: linear-gradient(to top, #270081, rgba(15, 23, 42, 0.952));
+  font-family: "Sour Gummy", serif;
+  color: white;
+  
+  padding: 240px 0;  /* 上下に余白を設定 */
+}
+@keyframes text-overlayz {
+    from {
+        opacity:0%;
+  top: -1190px;
+    }
+    to {
+        opacity:100%;
+        top: -1160px;
+    }
+}
+
+
+@keyframes text-overlay {
+    from {
+        opacity:0%;
+  top: -1230px;
+    }
+    to {
+        opacity:100%;
+        top: -1200px;
+    }
+}
+
+
+.buttonz {
+  position:relative;
+  font-weight: bold;
+
+white-space:nowrap;
+overflow:hidden;
+
+  display: inline-block;
+  background: linear-gradient(to right, #000d55 0%, #3c009c 45%, #00bfff 100%);
+  background-size: 200% auto;  
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  transition: .5s;
+
+  z-index:10;
+}
+.buttonz:hover {
+  color: #fff;
+  filter: blur(0px);
+  background-position: right center;
+}
+
+
+.hellos {
+    position: relative;
+    color: white;
+    top: 100px;
+  display: grid;
+  place-items: center;
+  font-family: "Sour Gummy", serif;
+  font-size:40px;
+    width: 50%;
+    animation:helloz 1s linear;
+    left:25%;
+    height:25%;
+    border-radius: 10px;
+    background-color:#000d55;
+}
+
+
+@keyframes helloz {
+    from {
+        opacity:0%;
+  top: 90px;
+    }
+    to {
+        opacity:100%;
+        top: 100px;
+    }
+}
+
+
+
     </style>
 </head>
 <body>
+    
+  <div class="blur-effect"><div class="blur-effect2"></div></div>
+    
+    <div class="text-overlay"><bold><center>Yuri V4. The best<br>Minecraft Ghost Client.</center></bold>
+    
+    </div>
+    <center><div class="button" id="btn">buy now</div></center>
+
+
+
+    <div class="box">
+        <marquee scrollamount="12" class="unkos">Undetectable safewalks/reaches　　　unpatched Hypixel Bedwars queue overlay　　　Bypasses any screenshares</marquee>
+    </div>
+  
+    <div class="boxx">
+        <div class="hellos">Price: $200<font size="4"><br></font><div class="buttonz" id="btn2">buy now</div></div>
+    </div>
+
+  <div class="content">
+  </div>
+
+
+<footer><center><font size="15"><br><br></font>made by mtnky &lt;3</center></footer>
+
+
+
+
+
+
+
     <script>
+let targets = document.querySelectorAll('.hellos'); //アニメーションさせたい要素
+//スクロールイベント
+window.addEventListener('scroll', function () {
+  var scroll = window.scrollY; //スクロール量を取得
+  var windowHeight = window.innerHeight; //画面の高さを取得
+  for (let target of targets) { //ターゲット要素がある分、アニメーション用のクラスをつける処理を繰り返す
+    var targetPos = target.getBoundingClientRect().top + scroll; //ターゲット要素の位置を取得
+    if (scroll > targetPos - windowHeight) { //スクロール量 > ターゲット要素の位置
+      target.classList.add('is-animated'); //is-animatedクラスを加える
+    }
+  }
+});
+
+
+        window.addEventListener("load", () => {
+        document.getElementById("btn").addEventListener("click", () => {
+            alert("Coming soon")
+        });
+      });
+        window.addEventListener("load", () => {
+        document.getElementById("btn2").addEventListener("click", () => {
+            alert("Coming soon")
+        });
+      });
+
     var rev = "fwd";
         function titlebar(val){
             var msg = "Yuri v4";
@@ -18,8 +290,7 @@
                 if(pos < le){
                     pos = pos+1;
                     scroll = msg.substr(0,pos);
-                    if (containsLetterOrNumber(scroll) === false) scroll = "\u200B";
-                    document.title = scroll;
+                    document.title = "✪ " + scroll + " ✪";
                     timer = window.setTimeout("titlebar("+pos+")",speed);
                 }
                 else {
@@ -32,8 +303,7 @@
                     pos = pos-1;
                     var ale = le-pos;
                     scrol = msg.substr(ale,le);
-                    if (containsLetterOrNumber(scrol) === false) scrol = "\u200B";
-                    document.title = scrol;
+                    document.title = "✪ " + scrol + " ✪";
                     timer = window.setTimeout("titlebar("+pos+")",speed);
                 }
                 else {
@@ -42,12 +312,7 @@
                 }
             }
         }
-        titlebar(1);
-
-        function containsLetterOrNumber(str) {
-  const regex = /[a-zA-Z0-9]/; // 文字または数字が含まれているか
-  return regex.test(str); // マッチすればtrueを返す
-}
+        titlebar(0);
     </script>
 </body>
 </html>
