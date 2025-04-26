@@ -1,0 +1,71 @@
+<!doctypehtml><html lang=ja><meta charset=UTF-8><title>matanku :3 | Developer</title><style>@import url(https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Rubik:wght@300..900&display=swap);body{overflow-x:hidden;margin:0;background:#000;font-family:"Darker Grotesque",sans-serif;font-optical-sizing:auto;font-weight:300;font-style:normal}canvas{display:block}h1{font-size:75px;color:#fff;z-index:2;position:absolute;top:50%;left:50%;transform:translate(-50%,-80%);transition:font-size .1s ease-out}h2{padding-top:500px;font-size:45px;color:#fff;text-align:center;left:50%;transform:translate(-50%,-80%);z-index:2;position:absolute;transition:font-size .1s ease-out}#blur-overlay{position:absolute;top:0;left:0;width:100vw;height:100vh;pointer-events:none;background:radial-gradient(circle at center,rgba(138,48,255,.25) 0,transparent 40%);mix-blend-mode:screen;z-index:1}#clr{color:#00489b;background:-webkit-linear-gradient(0deg,#0f7999,#ad00b3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-optical-sizing:auto;font-family:Rubik,sans-serif;font-weight:600;font-style:normal}#social{display:relative;background:#0e0e0e;width:30%;margin:0 auto;text-align:center;transition:background .6s;border:1px solid #252525;border-radius:16px}#social:hover{background:#292929}#container{padding:10px,20px;display:flex;flex-direction:row}a{text-decoration:none;color:#88f;transition:color .6s}a:hover{text-decoration:none;color:#ccf}#kuuhack{margin-bottom:1200px}#kuuhack2{margin-bottom:200px}#footer{position:relative;height:150px;width:200%;left:-50%;bottom:0;background:#fff}#List{margin:10px;padding:10px;background:#0e0e0e;height:500px;width:400px;float:left;border:1px solid #252525;border-radius:16px;transition:background .6s;font-size:35px}#List:hover{background:#292929}#spotlight{position:absolute;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,.5) 0,rgba(255,255,255,0) 70%);pointer-events:none;filter:blur(30px);transform:translate(-50%,-50%);mix-blend-mode:screen}</style><script src=https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js></script><div id=spotlight></div><canvas id=space></canvas><div id=blur-overlay></div><h1>Hi, My name is <span id=clr>matanku</span></h1><span style="font-size:45px;color:#fff;text-align:center;left:50%;transform:translate(-50%,-80%);z-index:2;position:absolute;transition:font-size .1s ease-out">▼</span><br><br><br><div id=kuuhack></div><h2>I'm a developer from Japan 🇯🇵<br><br>I can code in:<br>HTML, CSS, Javascript, Java, Python<br><br><br><span id=clr>Projects</span><br><font style=color:#c4c4c4 size=5>A collection of my recent experiments</font><br><div id=container><div id=List>Nick Generator/Report<br><font style=color:#c4c4c4;position:relative;top:-30px size=5>for <a href="https://www.youtube.com/watch?v=Qqc7tAosrkU">BedwarsJP</a></font><br><font style=color:#fff;position:relative;top:-30px size=6><div style=color:#7db6c4>Java</div><br><font style=color:#ffcaca>2000+</font> nick patterns<br>Private Codes</font><br></div><div id=List>2muu client<br><font style=color:#c4c4c4;position:relative;top:-30px size=5>for <a href=https://www.youtube.com/@NIMU-Minecraft>2muu</a></font><br><font style=color:#fff;position:relative;top:-30px size=6><div style=color:#7db6c4>Java - Minecraft mod</div><br>Many modules like:<br><font style=color:#ffcaca>AutoVoid<br>AutoFlagCollect</font><br>etc...</font></div><div id=List>2muu bed overlay<br><font style=color:#c4c4c4;position:relative;top:-30px size=5>for <a href=https://www.youtube.com/@NIMU-Minecraft>2muu</a></font><br><font style=color:#fff;position:relative;top:-30px size=6><div style=color:#7db6c4>Minecraft model</div><br><font style=color:#ffcaca>3D</font> Bed model<br>You can download from <a href=https://discord.gg/jNfxEGDn9z>discord</a></font></div></div><div id=kuuhack2></div><span id=clr>Contact</span><br><div id=social>Discord<br><font style=color:#c4c4c4 size=5>unsnipeable</font><br></div><div id=kuuhack2></div><div id=footer><center><font style=color:#000 size=5>Made by matanku | unsnipeable</font><br></center></div></h2><script>const spotlight = document.getElementById('spotlight');
+    document.addEventListener('mousemove', (e) => {
+      spotlight.style.left = `${e.pageX}px`;
+      spotlight.style.top = `${e.pageY}px`;
+    });
+  const canvas = document.getElementById('space');
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+  window.addEventListener('resize', () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+  const sizes = [1, 2, 4];
+  const particles = [];
+  function createParticle() {
+    const size = sizes[Math.floor(Math.random() * sizes.length)];
+    const speed = Math.random() * 0.3 + 0.05;
+    const angle = Math.random() * Math.PI * 2;
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      size: size,
+      dx: Math.cos(angle) * speed,
+      dy: Math.sin(angle) * speed,
+      alpha: 1
+    };
+  }
+  for (let i = 0; i < 60; i++) {
+    particles.push(createParticle());
+  }
+  function update() {
+    ctx.clearRect(0, 0, w, h);
+    for (let p of particles) {
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x >= 0 && p.x <= w && p.y >= 0 && p.y <= h) {
+        ctx.fillStyle = `rgba(200, 200, 200, ${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size / 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      if (p.x < -10 || p.x > w + 10 || p.y < -10 || p.y > h + 10) {
+  Object.assign(p, createParticle());
+}
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  update();
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            const newFontSize = Math.min(75 + scrollY / 20, 95);
+            document.querySelector('h1').style.fontSize = `${newFontSize}px`;
+        });
+
+        const lenis = new Lenis({
+      lerp:1 , // Linear interpolation (lerp) intensity (between 0 and 1)
+      duration:3,
+      wheelMultiplier: 0.8
+    });
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);</script>
+</body>
+</html>
