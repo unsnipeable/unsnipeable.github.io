@@ -4,7 +4,6 @@ const main = document.getElementById("main");
 const volume = document.getElementById("volume");
 const trails = document.getElementById("trails");
 const discord = document.getElementById("discord");
-const text = document.getElementById("discord-text");
 
 overlay.addEventListener("click", () => {
     overlay.classList.add("fade");
@@ -126,6 +125,6 @@ setInterval(() => {
         ""
     ];
 
-    document.title = frames[i];
+    document.title = `@${frames[i]}`;
     i = (i + 1) % frames.length;
 }, 300);
