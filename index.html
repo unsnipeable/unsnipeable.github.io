@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>matanku</title>
+    <meta name="description" content="matanku's bio page">
+    <meta name="author" content="Matanku">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">
+</head>
+<body>
+    <div id="overlay">
+        <div class="enter">click me</div>
+    </div>
+
+    <audio id="bgm" loop>
+        <source src="skyfall.webm" type="audio/webm">
+    </audio>
+
+    <div id="main">
+
+        <div class="card">
+            <h1>matanku</h1>
+            <p class="location">
+                Japan 🇯🇵
+                <span class="tooltip">Location</span>
+            </p>
+
+            <div class="social">
+
+                <div class="icon" id="discord" data-tooltip="Discord">
+                    <i class="mdi mdi-discord"></i>
+                </div>
+
+                <a class="icon" href="https://github.com/unsnipeable" target="_blank" data-tooltip="GitHub">
+                    <i class="mdi mdi-github-box"></i>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="volume">
+            <label for="volume">Song: Skyfall</label><br><input type="range" min="0" max="1" step="0.01" value="0.2" id="volume">
+        </div>
+
+        <div class="credit">made by matanku</div>
+
+        <div class="bg-switch" id="bgSwitch">
+            Click me!
+        </div>
+
+    </div>
+
+    <div id="trails"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

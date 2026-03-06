@@ -1,0 +1,186 @@
+:root{
+    --bg: url("./images/bg1.jpg");
+}
+
+body {
+    margin:0;
+    background:black;
+    color:white;
+
+    font-family: "Pangolin", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--bg, url("./images/bg1.jpg")) center -120px / cover no-repeat;
+}
+
+#overlay{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    transition:opacity 0.8s ease;
+    z-index:999;
+}
+
+#overlay.fade{
+    opacity:0;
+}
+
+.enter{
+    font-size:40px;
+    cursor:pointer;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    width:320px;
+    color:white;
+}
+
+.volume{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    padding:8px 12px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+
+    border-radius:16px;
+}
+
+.trail{
+    position:fixed;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:white;
+    filter:blur(4px);
+    pointer-events:none;
+    transform:translate(-50%, -50%);
+
+    z-index:-1;
+    animation: trailFade 0.2s linear forwards;
+}
+
+@keyframes trailFade{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+
+.location{
+    position:relative;
+    display:inline-block;
+    cursor:default;
+    font-size: 20px;
+}
+
+.location:hover .tooltip{
+    opacity:1;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin-top:14px;
+}
+
+.icon{
+    position:relative;
+    font-size:34px;
+    color:white;
+    cursor:pointer;
+    transition:transform 0.15s ease;
+}
+
+.tooltip,
+.icon::after{
+    position:absolute;
+
+    bottom:130%;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(10px);
+
+    padding:4px 10px;
+    border-radius:10px;
+
+    font-size:20px;
+    white-space:nowrap;
+
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.2s;
+}
+.icon::after{
+    content:attr(data-tooltip);
+}
+
+.icon:hover::after{
+    opacity:1;
+}
+.icon:hover{
+    transform:scale(1.1);
+}
+
+.credit{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    padding:8px 14px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+
+    border-radius:16px;
+    font-size:14px;
+}
+
+.bg-switch{
+    position:fixed;
+    right:20px;
+    top:20px;
+
+    padding:8px 14px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+
+    border-radius:16px;
+    font-size:14px;
+
+    cursor:pointer;
+    transition:transform .15s;
+}
+
+.bg-switch:hover{
+    transform:scale(1.05);
+}
