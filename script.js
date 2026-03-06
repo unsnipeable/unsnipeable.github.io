@@ -4,6 +4,7 @@ const main = document.getElementById("main");
 const volume = document.getElementById("volume");
 const trails = document.getElementById("trails");
 const discord = document.getElementById("discord");
+const bgSwitch = document.getElementById("bgSwitch");
 
 overlay.addEventListener("click", () => {
     overlay.classList.add("fade");
@@ -39,7 +40,7 @@ document.addEventListener("mousemove", e => {
     mouse.y = e.clientY;
 });
 
-function spawnDot(){
+function trail(){
     const dot = document.createElement("div");
     dot.className = "trail";
 
@@ -59,7 +60,7 @@ function spawnDot(){
 
 function loop(){
 
-    spawnDot();
+    trail();
 
     dots.forEach((d,i)=>{
         d.x += (mouse.x - d.x) * 0.02;
@@ -93,8 +94,6 @@ discord.addEventListener("click", () => {
     }, 1000);
 
 });
-
-const bgSwitch = document.getElementById("bgSwitch");
 
 let bgIndex = 1;
 const maxBg = 4;
