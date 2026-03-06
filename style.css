@@ -47,13 +47,24 @@ body::before {
 }
 
 .card{
+    box-sizing:border-box;
+
     background:rgba(255,255,255,0.05);
     backdrop-filter:blur(10px);
     padding:40px;
     border-radius:20px;
     text-align:center;
-    width:100%;
+    max-width:420px;
+    width:150%;
+    margin: 0 auto 0 -25%;
+
     color:white;
+}
+
+#main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .volume{
