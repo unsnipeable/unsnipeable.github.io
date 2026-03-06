@@ -62,15 +62,15 @@ function loop(){
     spawnDot();
 
     dots.forEach((d,i)=>{
-        d.x += (mouse.x - d.x) * 0.05;
-        d.y += (mouse.y - d.y) * 0.05;
+        d.x += (mouse.x - d.x) * 0.02;
+        d.y += (mouse.y - d.y) * 0.02;
 
         d.el.style.left = d.x + "px";
         d.el.style.top = d.y + "px";
 
         d.life += 1;
 
-        if(d.life > 24){ // 約0.4秒
+        if(d.life > 24){
             d.el.remove();
             dots.splice(i,1);
         }
@@ -120,8 +120,8 @@ const titleText = "matanku";
 
 setInterval(() => {
     const frames = [
-        ...Array.from(titleText, (_, i) => titleText.slice(0, i + 1)), // m, mt, mtn, mtnk
-        ...Array.from(titleText, (_, i) => titleText.slice(0, titleText.length - i - 1)), // mtn, mt, m
+        ...Array.from(titleText, (_, i) => titleText.slice(0, i + 1)),
+        ...Array.from(titleText, (_, i) => titleText.slice(0, titleText.length - i - 1)),
         ""
     ];
 

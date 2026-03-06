@@ -52,7 +52,7 @@ body::before {
     padding:40px;
     border-radius:20px;
     text-align:center;
-    width:320px;
+    width:100%;
     color:white;
 }
 
