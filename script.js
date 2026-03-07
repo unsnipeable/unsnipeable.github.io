@@ -5,6 +5,7 @@ const volume = document.getElementById("volume");
 const trails = document.getElementById("trails");
 const discord = document.getElementById("discord");
 const bgSwitch = document.getElementById("bgSwitch");
+const bgInfo = document.getElementById("bgInfo");
 
 overlay.addEventListener("click", () => {
     overlay.classList.add("fade");
@@ -95,23 +96,27 @@ discord.addEventListener("click", () => {
 
 });
 
-let bgIndex = 1;
-const maxBg = 4;
+const backgrounds = [
+    {img:"./images/bg1.jpg", name:"A2 (🇬🇷)"},
+    {img:"./images/bg2.jpg", name:"Piraeus (🇬🇷)"},
+    {img:"./images/bg3.jpg", name:"Colosseum (🇮🇹)"},
+    {img:"./images/bg4.jpg", name:"Meteora (Kalambaka, 🇬🇷)"}
+];
 
-bgSwitch.addEventListener("click", () => {
+let bgIndex = 0;
+
+bgSwitch.onclick = () => {
 
     bgIndex++;
+    if(bgIndex >= backgrounds.length) bgIndex = 0;
 
-    if(bgIndex > maxBg){
-        bgIndex = 1;
-    }
+    const bg = backgrounds[bgIndex];
 
-    document.body.style.setProperty(
-        "--bg",
-        `url("./images/bg${bgIndex}.jpg")`
-    );
+    document.body.style.setProperty("--bg", `url("${bg.img}")`);
+    bgInfo.textContent = bg.name;
 
-});
+    twemoji.parse(document.body);
+};
 
 
 let i = 0;
