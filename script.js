@@ -4,7 +4,7 @@ const main = document.getElementById("main");
 const volume = document.getElementById("volume");
 const trails = document.getElementById("trails");
 const discord = document.getElementById("discord");
-const discord2 = document.getElementById("discord");
+const discord2 = document.getElementById("discord2");
 const bgSwitch = document.getElementById("bgSwitch");
 const bgInfo = document.getElementById("bgInfo");
 
