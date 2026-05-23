@@ -98,7 +98,7 @@ discord.addEventListener("click", () => {
 });
 discord2.addEventListener("click", () => {
 
-    navigator.clipboard.writeText("mtnkwawa");
+    navigator.clipboard.writeText("matankugeoguessr");
 
     discord2.dataset.tooltip = "Copied!";
 
